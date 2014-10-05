@@ -130,9 +130,9 @@ public class MovieFlix {
 	    String currLine = inputFile.nextLine();
 	    String delims = "[,]+";
 	    String[] splitLine = currLine.split(delims);
-	    String actorName = StringStyle(splitLine[0]);
+	    String actorName = StringStyle(splitLine[0].trim());
 	    for ( int i = 1; i < splitLine.length; i++ ) {
-		String movieName = StringStyle(splitLine[i]);
+		String movieName = StringStyle(splitLine[i].trim());
 		movieDb.addMovie(movieName);
 		movieDb.addActor(actorName, movieName);
 	    }
