@@ -88,7 +88,8 @@ public class MovieDatabase {
     
     /**
      * Remove the movie with the title t from the 
-     * database. If a movie with the title t is not in 
+     * database. If t is null, throw exception.
+     * If a movie with the title t is not in 
      * the database, return false; otherwise (i.e., 
      * removal is sucessful) return true.
      *
@@ -99,7 +100,6 @@ public class MovieDatabase {
 	if ( t == null ) {
 	    throw new java.lang.IllegalArgumentException();
 	}
-
 
 	if( containsMovie(t) ) {
 	    movieItr.remove();
@@ -115,6 +115,9 @@ public class MovieDatabase {
     /**
      * Return true iff a movie with the title t is in
      * the database.
+     *
+     * Iterates the database and compare t with the
+     * movie title.
      *
      * @param t The title of the movie.
      * @return true iff MovieDatabase contains the movie.
@@ -136,6 +139,9 @@ public class MovieDatabase {
      * Return true iff an actor with the name n 
      * appears in the cast for at least one movie in 
      * the database.
+     *
+     * Iterates the database and obtain the cast
+     * Then iterates the cast and compare it with n
      *
      * @param n The name of the actor.
      * @return true iff the MovieDatabase contains the actor.
