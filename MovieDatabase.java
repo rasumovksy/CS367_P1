@@ -110,6 +110,7 @@ public class MovieDatabase {
 	if ( t == null ) {
 	    throw new java.lang.IllegalArgumentException();
 	}
+<<<<<<< HEAD
 
 	if( containsMovie(t) ) {
 	    movieItr.remove();
@@ -119,6 +120,9 @@ public class MovieDatabase {
     else{
         return false;
     }
+=======
+
+>>>>>>> 81079d987463cf98c1629fa317106ee7cbaf1136
     }
     
     /**
@@ -130,7 +134,7 @@ public class MovieDatabase {
      */
     public boolean containsMovie( String t ) {
 	if( t != null ) {
-	    movieItr = this.iterator(); // this.iterator() ?
+	    movieItr = this.iterator();
 	    while ( movieItr.hasNext() ) {
 		currMovie = movieItr.next();
 		if( currMovie.getTitle().equals(t) ) {
@@ -151,7 +155,7 @@ public class MovieDatabase {
      */
     public boolean containsActor( String n ) {
 	if ( n != null ) {
-	    movieItr = this.iterator(); // this.iterator() ?
+	    movieItr = this.iterator();
 	    while ( movieItr.hasNext() ) {
 		currMovie = movieItr.next();
 		currCastList = currMovie.getCast();
@@ -208,16 +212,19 @@ public class MovieDatabase {
      */
     public List<String> getMovies( String n ) {
 	currMovieList = new ArrayList<String>();
-	if ( n != null && containsActor(n) ) {
-	    movieItr = this.iterator(); // this.iterator() ?
+	if ( n == null || !containsActor(n) ) {
+	    return null;
+	}
+	else {
+	    movieItr = this.iterator();
 	    while ( movieItr.hasNext() ) {
 		currMovie = movieItr.next();
 		if ( isCast( n, currMovie.getTitle() ) ) {
 		    currMovieList.add( currMovie.getTitle() );
 		}
 	    }
+	    return currMovieList;
 	}
-	return currMovieList;
     }
     
     /**

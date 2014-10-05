@@ -169,7 +169,7 @@ public class MovieFlix {
 			
                     case 'p':
 			storageList = movieDb.getMovies(remainder);
-			if ( storageList == null ) {
+			if ( storageList == null || storageList.size() == 0 ) {
 			    System.out.println("actor not found");//should be actor not found
 			}
 			else {
@@ -324,10 +324,10 @@ public class MovieFlix {
 			
 			System.out.print("Largest Cast: ");
                     	PrintList( largestCast, false );
-			System.out.printf("[%d]\n",maxActors);
+			System.out.printf(" [%d]\n",maxActors);
 			System.out.print("Smallest Cast: ");
                     	PrintList( smallestCast, false );
-                    	System.out.printf("[%d]\n",minActors);
+                    	System.out.printf(" [%d]\n",minActors);
 			
                         break;
 			
