@@ -244,12 +244,12 @@ public class MovieFlix {
 			List<String> currMovieList = new ArrayList<String>();
 			List<String> currActorList = new ArrayList<String>();
 			int uniqueActors = 0;
-			int minActors = -1;
-			int maxActors = -1;
+			int minActors = 0;
+			int maxActors = 0;
 			int totalActors = 0;
 			
-			int minMovies = -1;
-			int maxMovies = -1;
+			int minMovies = 0;
+			int maxMovies = 0;
 			int totalMovies = 0;
 			
 			List<String> largestCast = new ArrayList<String>();
@@ -277,7 +277,7 @@ public class MovieFlix {
 			    totalActors += actorsPerMovie;
 			    
 			    // Test whether currMovie has the fewest actors:
-			    if ( actorsPerMovie <= minActors || minActors == -1 ) {
+			    if ( actorsPerMovie <= minActors || minActors == 0 ) {
 				if ( actorsPerMovie == minActors ) {
 				    smallestCast.add( currMovie.getTitle() );
 				}
@@ -288,7 +288,7 @@ public class MovieFlix {
 				minActors = actorsPerMovie;
 			    }
 			    // Test whether currMovie has the most actors:
-			    if ( actorsPerMovie >= maxActors || maxActors == -1 ) {
+			    if ( actorsPerMovie >= maxActors || maxActors == 0 ) {
 				if ( actorsPerMovie == maxActors ) {
 				    largestCast.add( currMovie.getTitle() );
 				}
@@ -307,10 +307,10 @@ public class MovieFlix {
 			    currMovieList = movieDb.getMovies( actorItr.next() );
 			    int moviesPerActor = currMovieList.size();
 			    totalMovies += moviesPerActor;
-			    if ( moviesPerActor <= minMovies || minMovies == -1 ) {
+			    if ( moviesPerActor <= minMovies || minMovies == 0 ) {
 				minMovies = moviesPerActor;
 			    }
-			    if ( moviesPerActor >= maxMovies || maxMovies == -1 ) {
+			    if ( moviesPerActor >= maxMovies || maxMovies == 0 ) {
 				maxMovies = moviesPerActor;
 			    }
 			}
