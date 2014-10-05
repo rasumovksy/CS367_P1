@@ -110,7 +110,7 @@ public class MovieDatabase {
 	if ( t == null ) {
 	    throw new java.lang.IllegalArgumentException();
 	}
-<<<<<<< HEAD
+
 
 	if( containsMovie(t) ) {
 	    movieItr.remove();
@@ -120,9 +120,7 @@ public class MovieDatabase {
     else{
         return false;
     }
-=======
 
->>>>>>> 81079d987463cf98c1629fa317106ee7cbaf1136
     }
     
     /**
