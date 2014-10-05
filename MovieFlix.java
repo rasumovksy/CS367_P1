@@ -32,7 +32,6 @@ import java.io.*;
  */
 public class MovieFlix {
     
-    // public or private?
     /**
      * Format a string with the proper capitalization style.
      *
@@ -44,7 +43,8 @@ public class MovieFlix {
 	String[] split = name.split(" ");
 	name = "";
 	for( int i = 0; i < split.length; i++ ) {
-	    split[i] = split[i].substring(0,1).toUpperCase()+split[i].substring(1);
+	    split[i] = split[i].substring(0,1)
+		.toUpperCase()+split[i].substring(1);
 	    name = name + split[i] + " ";
 	}
 	name = name.trim();
@@ -59,7 +59,7 @@ public class MovieFlix {
      * @return true iff the string appears in the list.
      */
     private static boolean Compare( String name, List<String> textList ) {
-	Iterator<String> textItr = textList.iterator();// use iterator not for loop
+	Iterator<String> textItr = textList.iterator();
 	while ( textItr.hasNext() ) {
 	    if ( name.equals( textItr.next() ) ) {
 		return true;
@@ -77,11 +77,11 @@ public class MovieFlix {
      * @param newline Boolean to specify whether or not to print new line.
      */
     public static void PrintList( List<String> textList, Boolean newline ) {
-	Iterator<String> textItr = textList.iterator();// use iterator not for loop
+	Iterator<String> textItr = textList.iterator();
 	int currIndex = 0;
 	while ( textItr.hasNext() ) {
 	    currIndex++;
-	    if ( currIndex == textList.size() ) {// should this be -1?
+	    if ( currIndex == textList.size() ) {
 		if( newline ) {
 		    System.out.println( textItr.next() );
 		}
@@ -116,15 +116,11 @@ public class MovieFlix {
 	    System.out.println("Error: Cannot access input file");
 	    System.exit(0);
 	}
-	////
-	////
-	////
-	// Create instances of main variables:
+	// Create instances of primary reused variables:
 	MovieDatabase movieDb = new MovieDatabase();
 	List<String> storageList = new ArrayList<String>();
 	
 	// Load the data from the input file:
-	// no need to use else statement:
 	Scanner inputFile = new Scanner(dataFile);
 	while ( inputFile.hasNext() ) {
 	    String currLine = inputFile.nextLine();
@@ -150,7 +146,7 @@ public class MovieFlix {
             //only do something if the user enters at least one character
             if ( input.length() > 0 ) {
                 char choice = input.charAt(0); //strip off option character
-                String remainder = "";         //will hold the remaining input
+                String remainder = "";         //holds the remaining input
                 if ( input.length() > 1 ) {    //if there is an argument
                     //trim off any leading or trailing spaces
                     remainder = StringStyle(input.substring(1).trim()); 
@@ -169,8 +165,9 @@ public class MovieFlix {
 			
                     case 'p':
 			storageList = movieDb.getMovies(remainder);
-			if ( storageList == null || storageList.size() == 0 ) {
-			    System.out.println("actor not found");//should be actor not found
+			if ( storageList == null 
+			     || storageList.size() == 0 ) {
+			    System.out.println("actor not found");
 			}
 			else {
 			    PrintList( storageList, true );
@@ -178,7 +175,7 @@ public class MovieFlix {
 			break;
     
                     case 'r':
-			if ( movieDb.removeMovie(remainder) ) {// no need to create Boolean
+			if ( movieDb.removeMovie(remainder) ) {
 			    System.out.println("movie removed");
 			}
 			else {
@@ -187,24 +184,26 @@ public class MovieFlix {
                         break;
     
                     case 's':
-                        // The following code reads in a comma-separated sequence 
-                        // of strings. If there are exactly two strings in the 
-                        // sequence, the strings are assigned to name1 and name2.
-                        // Otherwise, an error message is printed.
+                        // The following reads in comma-separated sequence 
+                        // of strings. If there are exactly two strings in 
+			// the sequence, the strings are assigned to name1 
+			// and name2. Otherwise, an error message is printed.
                         String[] tokens = remainder.split("[,]+");
                         if ( tokens.length != 2 ) {
-                            System.out.println("need to provide exactly two names");
+System.out.println("need to provide exactly two names");
                         }
                         else {
                             String name1 = StringStyle(tokens[0].trim());
                             String name2 = StringStyle(tokens[1].trim());
                             
 			    // Store the common movies:
-			    List<String> currMovieList = new ArrayList<String>();
+			    List<String> currMovieList 
+				= new ArrayList<String>();
 			    
 			    // Get movies associated with 1st actor:
 			    storageList = movieDb.getMovies(name1);
-			    Iterator<String> currDbItr = storageList.iterator();
+			    Iterator<String> currDbItr 
+				= storageList.iterator();
 			    while ( currDbItr.hasNext() ) {
 				String currMovie = currDbItr.next();
 				// Then check whether 2nd actor also cast:
@@ -223,7 +222,7 @@ public class MovieFlix {
 			
                     case 'w':
 			if ( movieDb.removeActor(remainder) ) {
-			    System.out.printf( "%s withdrawn from all movies\n", remainder );
+System.out.printf( "%s withdrawn from all movies\n", remainder );
 			}
 			else {
 			    System.out.println("actor not found");
@@ -240,7 +239,6 @@ public class MovieFlix {
                     switch (choice) { //the commands without arguments
                     
                     case 'd': 
-                        // TODO to implement this option ***
 			List<String> currMovieList = new ArrayList<String>();
 			List<String> currActorList = new ArrayList<String>();
 			int uniqueActors = 0;
@@ -255,16 +253,17 @@ public class MovieFlix {
 			List<String> largestCast = new ArrayList<String>();
 			List<String> smallestCast = new ArrayList<String>();
 			
-			// Why don't we just use the MovieDatabase size() for the number of movies, and then loop through the movies to determine the number of actors...
-			// loop for number of unique actors:
-			Iterator<Movie> movieItr = movieDb.iterator();//<-- THIS IS IMPORTANT
+			// Loop to calculate number of unique actors:
+			Iterator<Movie> movieItr = movieDb.iterator();
 			while ( movieItr.hasNext() ) {
 			    Movie currMovie = movieItr.next();
-			    if ( !Compare( currMovie.getTitle(), currMovieList ) ) {
+			    if ( !Compare( currMovie.getTitle(), 
+					   currMovieList ) ) {
 				currMovieList.add( currMovie.getTitle() );
 			    }
 			    
-			    List<String> currCast = movieDb.getCast( currMovie.getTitle() );
+			    List<String> currCast 
+				= movieDb.getCast( currMovie.getTitle() );
 			    Iterator<String> castItr = currCast.iterator();
 			    while ( castItr.hasNext() ) {
 				String currActor = castItr.next();
@@ -277,7 +276,8 @@ public class MovieFlix {
 			    totalActors += actorsPerMovie;
 			    
 			    // Test whether currMovie has the fewest actors:
-			    if ( actorsPerMovie <= minActors || minActors == 0 ) {
+			    if ( actorsPerMovie <= minActors 
+				 || minActors == 0 ) {
 				if ( actorsPerMovie == minActors ) {
 				    smallestCast.add( currMovie.getTitle() );
 				}
@@ -288,7 +288,8 @@ public class MovieFlix {
 				minActors = actorsPerMovie;
 			    }
 			    // Test whether currMovie has the most actors:
-			    if ( actorsPerMovie >= maxActors || maxActors == 0 ) {
+			    if ( actorsPerMovie >= maxActors 
+				 || maxActors == 0 ) {
 				if ( actorsPerMovie == maxActors ) {
 				    largestCast.add( currMovie.getTitle() );
 				}
@@ -301,26 +302,35 @@ public class MovieFlix {
 			    
 			}
 			
-			// Loop over unique actors, check if they have most or least credits:
+			// Loop over unique actors, and then check
+			// whether they have most or least credits:
 		        Iterator<String> actorItr = currActorList.iterator();
 			while ( actorItr.hasNext() ) {
-			    currMovieList = movieDb.getMovies( actorItr.next() );
+			    currMovieList = 
+				movieDb.getMovies( actorItr.next() );
 			    int moviesPerActor = currMovieList.size();
 			    totalMovies += moviesPerActor;
-			    if ( moviesPerActor <= minMovies || minMovies == 0 ) {
+			    if ( moviesPerActor <= minMovies 
+				 || minMovies == 0 ) {
 				minMovies = moviesPerActor;
 			    }
-			    if ( moviesPerActor >= maxMovies || maxMovies == 0 ) {
+			    if ( moviesPerActor >= maxMovies 
+				 || maxMovies == 0 ) {
 				maxMovies = moviesPerActor;
 			    }
 			}
 			
 			// Print display to screen:
-			System.out.printf( "Movies: %d, Actors: %d\n", movieDb.size(), uniqueActors );
-			double avgActors = ((double)totalActors / ((double)movieDb.size()));
-			double avgMovies = ((double)totalMovies / ((double)currActorList.size()));
-			System.out.printf( "# of actors/movie: most %d, least %d, average %d\n", maxActors, minActors, Math.round(avgActors) );
-			System.out.printf( "# of movies/actor: most %d, least %d, average %d\n", maxMovies, minMovies, Math.round(avgMovies) );
+			System.out.printf( "Movies: %d, Actors: %d\n",
+					   movieDb.size(), uniqueActors );
+			double avgActors = ((double)totalActors /
+					    ((double)movieDb.size()));
+			double avgMovies = ((double)totalMovies / 
+					    ((double)currActorList.size()));
+System.out.printf( "# of actors/movie: most %d, least %d, average %d\n",
+		   maxActors, minActors, Math.round(avgActors) );
+System.out.printf( "# of movies/actor: most %d, least %d, average %d\n",
+		   maxMovies, minMovies, Math.round(avgMovies) );
 			
 			System.out.print("Largest Cast: ");
                     	PrintList( largestCast, false );
@@ -340,10 +350,10 @@ public class MovieFlix {
                     default:  //a command with no argument
                         System.out.println("Incorrect command.");
                         break;
+
                     } //end switch
                 } //end else  
            } //end if
         } //end while
     } //end main
-
-}
+}// end class
