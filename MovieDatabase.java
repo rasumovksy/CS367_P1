@@ -4,17 +4,19 @@
 // File:             MovieDatabase.java
 // Semester:         CS302 Fall 2014
 //
-// Author:           Andrew Hard hard@wisc.edu
+// Author:           Andrew Hard 
+// Email:            hard@wisc.edu
 // CS Login:         hard
 // Lecturer's Name:  Jim Skrentny 
 // Lab Section:      LEC-002 (77632)
 //
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Pair Partner:     Ming Chew
-// CS Login:         (partner's login name)
-// Lecturer's Name:  (name of your partner's lecturer)
-// Lab Section:      (your partner's lab section number)
+// Pair Partner:     Wayne Chew
+// Email:            mchew2@wisc.edu
+// CS Login:         mchew
+// Lecturer's Name:  Jim Skrentny
+// Lab Section:      LEC-001 (77631)
 //
 ///////////////////////////////////////////////////////////////////////////////
 

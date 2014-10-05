@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 // 
 // Title:            MovieFlix
 // Files:            MovieFlix.java, MovieDatabase.java, Movie.java
@@ -12,11 +12,11 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Pair Partner:     Ming Chew
-// Email:            (email address of your programming partner)
-// CS Login:         (partner's login name)
-// Lecturer's Name:  (name of your partner's lecturer)
-// Lab Section:      (your partner's lab section number)
+// Pair Partner:     Wayne Chew
+// Email:            mchew2@wisc.edu
+// CS Login:         mchew
+// Lecturer's Name:  Jim Skrentny
+// Lab Section:      LEC-001 (77631)
 //
 ///////////////////////////////////////////////////////////////////////////////
 
