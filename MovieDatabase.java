@@ -31,21 +31,15 @@ import java.util.*;
  */
 public class MovieDatabase {
     
-    // Stores the movies contained in the database:
-    private List<Movie> movies;
+    private List<Movie> movies;// Stores the movies in database
     
-    // Iterator for the movies in the database:
-    private Iterator<Movie> movieItr;
-    // Iterator over the cast in the current movie:
-    private Iterator<String> castItr;
+    private Iterator<Movie> movieItr;// Iterator for movies in database
+    private Iterator<String> castItr;// Iterator over cast of movie
     
-    // Current list of movies:
-    private List<String> currMovieList;
-    // Current list of actors:
-    private List<String> currCastList;
+    private List<String> currMovieList;// Current list of movies
+    private List<String> currCastList; // Current list of actors
     
-    // Current Movie object:
-    private Movie currMovie;
+    private Movie currMovie;// Current Movie object
     
     /**
      * Constructs an empty database.
@@ -243,12 +237,16 @@ public class MovieDatabase {
      * is successful) return true.
      */
     public boolean removeActor(String n) {
-	if( containsActor(n) ){
-        while ( containsActor(n) ) {
-	       castItr.remove();//double check that remove() is implemented for ArrayList
+
+	if( !containsActor(n) ) {
+	    return false;
+	}
+	else {
+	    while ( containsActor(n) ) {
+		castItr.remove();
 	    }
-        return true;
+	    return true;
+	}
     }
-	return false;
-    }
+    
 }

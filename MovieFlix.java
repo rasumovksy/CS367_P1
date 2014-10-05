@@ -222,7 +222,7 @@ public class MovieFlix {
                         break;
 			
                     case 'w':
-			if ( movieDb.removeActor(remainder) ) {// no need to create Boolean
+			if ( movieDb.removeActor(remainder) ) {
 			    System.out.println("name withdrawn from all movies");
 			}
 			else {
