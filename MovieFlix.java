@@ -196,8 +196,8 @@ public class MovieFlix {
                             System.out.println("need to provide exactly two names");
                         }
                         else {
-                            String name1 = tokens[0].trim();
-                            String name2 = tokens[1].trim();
+                            String name1 = StringStyle(tokens[0].trim());
+                            String name2 = StringStyle(tokens[1].trim());
                             
 			    // Store the common movies:
 			    List<String> currMovieList = new ArrayList<String>();

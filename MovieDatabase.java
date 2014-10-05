@@ -243,10 +243,12 @@ public class MovieDatabase {
      * is successful) return true.
      */
     public boolean removeActor(String n) {
-	while ( containsActor(n) ) {
-	    castItr.remove();//double check that remove() is implemented for ArrayList
+	if( containsActor(n) ){
+        while ( containsActor(n) ) {
+	       castItr.remove();//double check that remove() is implemented for ArrayList
+	    }
         return true;
-	}
+    }
 	return false;
     }
 }
