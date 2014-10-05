@@ -320,11 +320,10 @@ public class MovieFlix {
 			
 			// Print display to screen:
 			System.out.printf( "Movies: %d, Actors: %d\n", movieDb.size(), uniqueActors );
-			System.out.printf( "# of actors/movie: most %d, least %d, average %d\n", maxActors, minActors, (int)Math.ceil(totalActors/movieDb.size()) );
-			//System.out.printf( "# of movies/actor: most %d, least %d, average %d\n", maxMovies, minMovies, (int)Math.ceil(totalMovies/currActorList.size()) );
-			
-			//System.out.printf( "# of actors/movie: most %d, least %d, average %d %d \n", maxActors, minActors, totalActors, movieDb.size() );
-			System.out.printf( "# of movies/actor: most %d, least %d, average %d %d \n", maxMovies, minMovies, totalMovies, currActorList.size() );
+			double avgActors = ((double)totalActors / ((double)movieDb.size()));
+			double avgMovies = ((double)totalMovies / ((double)currActorList.size()));
+			System.out.printf( "# of actors/movie: most %d, least %d, average %d\n", maxActors, minActors, Math.round(avgActors) );
+			System.out.printf( "# of movies/actor: most %d, least %d, average %d\n", maxMovies, minMovies, Math.round(avgMovies) );
 			
 			System.out.print("Largest Cast: ");
                     	PrintList( largestCast, false );

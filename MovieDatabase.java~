@@ -1,0 +1,102 @@
+import java.util.*;
+
+/** 
+ * The MovieDatabase class stores the movies 
+ */
+
+public class MovieDatabase {
+    
+    /**
+     * Add a movie with the given title t to the end
+     * of the database. If a movie with the title t 
+     * is already in the database, just return.
+     */
+    
+    void addMovie(String t) {
+    }
+
+    /**
+     * 	Add the actor with given name n to the movie 
+     * with the given title t in the database. If a 
+     * movie with the title t is not in the database 
+     * throw a java.lang.IllegalArgumentException. If 
+     * n is already in the cast of actors in the movie 
+     * with title t, just return.
+     */
+    void addActor(String n, String t) {
+    }
+    
+    /**
+     * Remove the movie with the title t from the 
+     * database. If a movie with the title t is not in 
+     * the database, return false; otherwise (i.e., 
+     * removal is sucessful) return true.
+     */
+    boolean removeMovie(String t) {
+    }
+    
+    /**
+     * Return true iff a movie with the title t is in
+     * the database.
+     */
+    boolean containsMovie(String t) {
+    }
+    
+    /**
+     * Return true iff an actor with the name n 
+     * appears in the cast for at least one movie in 
+     * the database.
+     */
+    boolean containsActor(String n) {
+    }
+    
+    /**
+     * Returns true iff the given actor n is cast in 
+     * the movie with the given title t. If a movie 
+     * with the title t is not in the database, return 
+     * false.
+     */
+    boolean isCast(String n, String t) {
+    }
+    
+    /**
+     * Return the cast of actors for the movie with the 
+     * given title t. If a movie with the title t is not 
+     * in the database, return null.
+     */
+    List<String> getCast(String t) {
+    }
+    
+    /** 
+     * Return the list of movies in which the actor with
+     * the given name n is cast. If an actor with the name 
+     * n is not in the database, return null.
+     */
+    List<String> getMovies(String n) {
+    }
+    
+    /**
+     * Return an Iterator over the Movie objects in the 
+     * database. The movies should be returned in the order 
+     * they were added to the database (resulting from the 
+     * order in which they are in the input file).
+     */
+    Iterator<Movie> iterator() {
+    }
+    
+    /**
+     * Return the number of movies in this database.
+     */
+    int size() {
+    }
+    
+    /**
+     * Remove the actor with the given name n from the data-
+     * base (i.e., remove the actor from every movie in which
+     * they are cast). If an actor with the name n is not in
+     * the database, return false; otherwise (i.e., the removal
+     * is successful) return true.
+     */
+    boolean removeActor(String n) {
+    }
+}
