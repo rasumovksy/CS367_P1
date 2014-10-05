@@ -242,12 +242,12 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			List<String> currMovieList = new ArrayList<String>();
 			List<String> currActorList = new ArrayList<String>();
 			int uniqueActors = 0;
-			int minActors = 0;
-			int maxActors = 0;
+			int minActors = -1;
+			int maxActors = -1;
 			int totalActors = 0;
 			
-			int minMovies = 0;
-			int maxMovies = 0;
+			int minMovies = -1;
+			int maxMovies = -1;
 			int totalMovies = 0;
 			
 			List<String> largestCast = new ArrayList<String>();
@@ -277,7 +277,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			    
 			    // Test whether currMovie has the fewest actors:
 			    if ( actorsPerMovie <= minActors 
-				 || minActors == 0 ) {
+				 || minActors == -1 ) {
 				if ( actorsPerMovie == minActors ) {
 				    smallestCast.add( currMovie.getTitle() );
 				}
@@ -289,7 +289,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			    }
 			    // Test whether currMovie has the most actors:
 			    if ( actorsPerMovie >= maxActors 
-				 || maxActors == 0 ) {
+				 || maxActors == -1 ) {
 				if ( actorsPerMovie == maxActors ) {
 				    largestCast.add( currMovie.getTitle() );
 				}
@@ -311,11 +311,11 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			    int moviesPerActor = currMovieList.size();
 			    totalMovies += moviesPerActor;
 			    if ( moviesPerActor <= minMovies 
-				 || minMovies == 0 ) {
+				 || minMovies == -1 ) {
 				minMovies = moviesPerActor;
 			    }
 			    if ( moviesPerActor >= maxMovies 
-				 || maxMovies == 0 ) {
+				 || maxMovies == -1 ) {
 				maxMovies = moviesPerActor;
 			    }
 			}
@@ -327,7 +327,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			if( maxActors == -1 ){ maxActors = 0; }
 			if( minActors == -1 ){ minActors = 0; }
 			if( maxMovies == -1 ){ maxMovies = 0; }
-			if( maxMovies == -1 ){ minMovies = 0; }
+			if( minMovies == -1 ){ minMovies = 0; }
 
 			double avgActors = ((double)totalActors /
 					    ((double)movieDb.size()));
