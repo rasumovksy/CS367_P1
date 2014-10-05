@@ -67,9 +67,7 @@ public class MovieFlix {
 	}
 	return false;
     }
-    
-    // Merged PrintListNoLine and PrintList    
-    
+        
     /**
      * Print the entries in a list one per line, separated by a comma
      *
@@ -153,7 +151,7 @@ public class MovieFlix {
 		    
                     switch (choice) { //the commands that have arguments
 			
-                    case 'c':
+                    case 'c':// display cast for given movie title
 			storageList = movieDb.getCast(remainder);
 			if ( storageList == null ) {
 			    System.out.println("movie not found");
@@ -163,7 +161,7 @@ public class MovieFlix {
 			}
                         break;
 			
-                    case 'p':
+                    case 'p':// print movies associated with an actor
 			storageList = movieDb.getMovies(remainder);
 			if ( storageList == null 
 			     || storageList.size() == 0 ) {
@@ -174,7 +172,7 @@ public class MovieFlix {
 			}
 			break;
     
-                    case 'r':
+                    case 'r':// remove movie with given title
 			if ( movieDb.removeMovie(remainder) ) {
 			    System.out.println("movie removed");
 			}
@@ -183,7 +181,7 @@ public class MovieFlix {
 			}
                         break;
     
-                    case 's':
+                    case 's':// Search for movies with both given actors
                         // The following reads in comma-separated sequence 
                         // of strings. If there are exactly two strings in 
 			// the sequence, the strings are assigned to name1 
@@ -200,7 +198,7 @@ System.out.println("need to provide exactly two names");
 			    List<String> currMovieList 
 				= new ArrayList<String>();
 			    
-			    // Get movies associated with 1st actor:
+			    // Iterate over movies with 1st actor:
 			    storageList = movieDb.getMovies(name1);
 			    Iterator<String> currDbItr 
 				= storageList.iterator();
@@ -220,7 +218,7 @@ System.out.println("need to provide exactly two names");
 			}
                         break;
 			
-                    case 'w':
+                    case 'w':// withdraw actor from all movies
 			if ( movieDb.removeActor(remainder) ) {
 System.out.printf( "%s withdrawn from all movies\n", remainder );
 			}
@@ -237,10 +235,13 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
                 } // end if
                 else { //if there is no argument
                     switch (choice) { //the commands without arguments
-                    
+			// display actor information:
                     case 'd': 
 			List<String> currMovieList = new ArrayList<String>();
 			List<String> currActorList = new ArrayList<String>();
+			List<String> largestCast = new ArrayList<String>();
+			List<String> smallestCast = new ArrayList<String>();
+			
 			int uniqueActors = 0;
 			int minActors = -1;
 			int maxActors = -1;
@@ -250,10 +251,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			int maxMovies = -1;
 			int totalMovies = 0;
 			
-			List<String> largestCast = new ArrayList<String>();
-			List<String> smallestCast = new ArrayList<String>();
-			
-			// Loop to calculate number of unique actors:
+			// Iterator over movies to find unique actors:
 			Iterator<Movie> movieItr = movieDb.iterator();
 			while ( movieItr.hasNext() ) {
 			    Movie currMovie = movieItr.next();
@@ -265,6 +263,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			    List<String> currCast 
 				= movieDb.getCast( currMovie.getTitle() );
 			    Iterator<String> castItr = currCast.iterator();
+			    // Loop over cast of current movie to find actors:
 			    while ( castItr.hasNext() ) {
 				String currActor = castItr.next();
 				if ( !Compare( currActor, currActorList ) ) {
@@ -299,10 +298,9 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 				}
 				maxActors = actorsPerMovie;
 			    }
-			    
-			}
+			}// end while loop for movieItr
 			
-			// Loop over unique actors, and then check
+			// Iterate over unique actors, and then check
 			// whether they have most or least credits:
 		        Iterator<String> actorItr = currActorList.iterator();
 			while ( actorItr.hasNext() ) {
@@ -318,7 +316,7 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 				 || maxMovies == -1 ) {
 				maxMovies = moviesPerActor;
 			    }
-			}
+			}// end while loop for actorItr
 			
 			// Print display to screen:
 			System.out.printf( "Movies: %d, Actors: %d\n",
@@ -328,14 +326,12 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			if( minActors == -1 ){ minActors = 0; }
 			if( maxMovies == -1 ){ maxMovies = 0; }
 			if( minMovies == -1 ){ minMovies = 0; }
-
+			
 			double avgActors = ((double)totalActors /
 					    ((double)movieDb.size()));
 			double avgMovies = ((double)totalMovies / 
 					    ((double)currActorList.size()));
-
-
-
+			
 System.out.printf( "# of actors/movie: most %d, least %d, average %d\n",
 		   maxActors, minActors, Math.round(avgActors) );
 System.out.printf( "# of movies/actor: most %d, least %d, average %d\n",
@@ -350,7 +346,7 @@ System.out.printf( "# of movies/actor: most %d, least %d, average %d\n",
 			
                         break;
 			
-                    case 'x':
+		    case 'x':// display exit and then exit program
                         done = true;
 			stdin.close();
                         System.out.println("exit");
