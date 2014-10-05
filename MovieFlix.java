@@ -39,14 +39,17 @@ public class MovieFlix {
      * @return The formatted string.
      */
     private static String StringStyle( String name ) {
-	name = name.toLowerCase();
-	String[] split = name.split(" ");
+	name = name.toLowerCase();	//convert name to lower case
+	String[] split = name.split(" "); //split the words
 	name = "";
+
+	//loop through the string and capitalize the first letter
 	for( int i = 0; i < split.length; i++ ) {
 	    split[i] = split[i].substring(0,1)
 		.toUpperCase()+split[i].substring(1);
 	    name = name + split[i] + " ";
-	}
+	}//end for loop
+
 	name = name.trim();
 	return name;
     }
@@ -115,22 +118,29 @@ public class MovieFlix {
 	    System.exit(0);
 	}
 	// Create instances of primary reused variables:
+	// StorageList to temporarily store returned List<String>
 	MovieDatabase movieDb = new MovieDatabase();
 	List<String> storageList = new ArrayList<String>();
 	
 	// Load the data from the input file:
 	Scanner inputFile = new Scanner(dataFile);
+	
+	//loop through the input file
 	while ( inputFile.hasNext() ) {
+		//Split the file line by line
 	    String currLine = inputFile.nextLine();
+	    //Split the line into strings at the comma
 	    String delims = "[,]+";
 	    String[] splitLine = currLine.split(delims);
+	    //Seperate and format strings into actor and movies 
 	    String actorName = StringStyle(splitLine[0].trim());
 	    for ( int i = 1; i < splitLine.length; i++ ) {
 		String movieName = StringStyle(splitLine[i].trim());
+		//add movies and actors into database
 		movieDb.addMovie(movieName);
 		movieDb.addActor(actorName, movieName);
 	    }
-	}
+	}//end while loop
 	inputFile.close();
 	
 	// for console input:
@@ -153,6 +163,7 @@ public class MovieFlix {
 			
                     case 'c':// display cast for given movie title
 			storageList = movieDb.getCast(remainder);
+			//print out the cast unless storageList is null
 			if ( storageList == null ) {
 			    System.out.println("movie not found");
 			}
@@ -163,6 +174,7 @@ public class MovieFlix {
 			
                     case 'p':// print movies associated with an actor
 			storageList = movieDb.getMovies(remainder);
+			//print out the movies unless storageList is null
 			if ( storageList == null 
 			     || storageList.size() == 0 ) {
 			    System.out.println("actor not found");
@@ -191,6 +203,7 @@ public class MovieFlix {
 System.out.println("need to provide exactly two names");
                         }
                         else {
+                        	//Format the style of the input
                             String name1 = StringStyle(tokens[0].trim());
                             String name2 = StringStyle(tokens[1].trim());
                             
