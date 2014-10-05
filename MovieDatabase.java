@@ -62,7 +62,11 @@ public class MovieDatabase {
      * @param t The title of the movie.
      */
     public void addMovie( String t ) {
-	if ( !containsMovie(t) && t != null ) {
+	if (containsMovie(t)) {
+        return;
+    }
+
+    else if ( !containsMovie(t) && t != null ) {
 	    currMovie = new Movie(t);
 	    movies.add(currMovie);
 	}
@@ -83,7 +87,12 @@ public class MovieDatabase {
 	if ( !containsMovie(t) ) {
 	    throw new java.lang.IllegalArgumentException();
 	}
-	if ( !isCast(n, t) && n != null ) {
+
+    if (containsMovie(t)){
+        return;
+    }
+
+	else if ( !isCast(n, t) && n != null ) {
 	    currCastList.add(n);
 	}
     }
@@ -101,13 +110,15 @@ public class MovieDatabase {
 	if ( t == null ) {
 	    throw new java.lang.IllegalArgumentException();
 	}
-	if( !containsMovie(t) ) {
-	    return false;
-	}
-	else {
-	    Iterator<Movie> movieItr = this.iterator(); // should it just be iterator?
-	    return true;
-	}
+
+	if( containsMovie(t) ) {
+	    movieItr.remove();
+        return true;
+    }
+
+    else{
+        return false;
+    }
     }
     
     /**
