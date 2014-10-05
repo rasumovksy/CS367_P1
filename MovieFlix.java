@@ -223,7 +223,7 @@ public class MovieFlix {
 			
                     case 'w':
 			if ( movieDb.removeActor(remainder) ) {
-			    System.out.println("name withdrawn from all movies");
+			    System.out.printf( "%s withdrawn from all movies\n", remainder );
 			}
 			else {
 			    System.out.println("actor not found");
