@@ -121,8 +121,6 @@ public class MovieFlix {
 	////
 	// Create instances of main variables:
 	MovieDatabase movieDb = new MovieDatabase();
-	List<String> actorList = new ArrayList<String>();
-	List<String> movieList = new ArrayList<String>();// this isn't used... currMovieList???
 	List<String> storageList = new ArrayList<String>();
 	
 	// Load the data from the input file:
@@ -138,7 +136,6 @@ public class MovieFlix {
 		movieDb.addMovie(movieName);
 		movieDb.addActor(actorName, movieName);
 	    }
-	    actorList.add(actorName);
 	}
 	inputFile.close();
 	
