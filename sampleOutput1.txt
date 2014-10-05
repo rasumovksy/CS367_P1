@@ -1,0 +1,32 @@
+Enter option (cdprswx): d
+Movies: 7, Actors: 5
+# of actors/movie: most 3, least 1, average 2
+# of movies/actor: most 5, least 1, average 3
+Largest Cast: A Magical Flute [3]
+Smallest Cast: Something Old, Typing With One Hand [1]
+Enter option (cdprswx): c a magical flute
+Bobby Roberts, Annabelle Lee, Betty Donner
+Enter option (cdprswx): p Bobby Roberts
+A Magical Flute, Perfect Nonsense, Much Ado About Jenny, Something Old
+Enter option (cdprswx): p betty donner
+A Magical Flute, Overflow
+Enter option (cdprswx): w betty donner
+Betty Donner removed from all movies
+Enter option (cdprswx): d
+Movies: 7, Actors: 4
+# of actors/movie: most 2, least 1, average 2
+# of movies/actor: most 5, least 1, average 3
+Largest Cast: A Magical Flute, Perfect Nonsense, Much Ado About Jenny, Bluish Sky [2]
+Smallest Cast: Something Old, Typing With One Hand, Overflow [1]
+Enter option (cdprswx): s Bobby Roberts,Annabelle Lee
+A Magical Flute, Much Ado About Jenny
+Enter option (cdprswx): p Sampson Applehead
+Bluish Sky
+Enter option (cdprswx): s Bobby Roberts,Sampson AppleHead
+none
+Enter option (cdprswx): c just a movie
+movie not found
+Enter option (cdprswx): p some actor
+actor not found
+Enter option (cdprswx): x
+exit

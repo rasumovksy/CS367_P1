@@ -1,0 +1,42 @@
+Enter option (cdprswx): d
+Movies: 59, Actors: 46
+# of actors/movie: most 6, least 1, average 2
+# of movies/actor: most 6, least 1, average 3
+Largest Cast: Forgetting Sarah Marshall [6]
+Smallest Cast: Hidalgo, The Boondock Saints, The Descendants, The Graduate, Gladiator, Cinderella Man, Inglourious Basterds, Stranger Than Fiction, Borat, Hugo, The Sound Of Music, Mary Poppins, Rent, Easy A, You Again, When In Rome, Black Swan [1]
+Enter option (cdprswx): c forgetting Sarah Marshall
+Jonah Hill, Jason Segel, Kristen Bell, Mila Kunis, Russell Brand, Jason Bateman
+Enter option (cdprswx): p MILA KUNIS
+Forgetting Sarah Marshall, Friends With Benefits, Black Swan
+Enter option (cdprswx): w mila kunis
+Mila Kunis withdrawn from all movies
+Enter option (cdprswx): p Mila Kunis
+actor not found
+Enter option (cdprswx): c Forgetting Sarah Marshall
+Jonah Hill, Jason Segel, Kristen Bell, Russell Brand, Jason Bateman
+Enter option (cdprswx): d
+Movies: 59, Actors: 45
+# of actors/movie: most 5, least 0, average 2
+# of movies/actor: most 6, least 1, average 3
+Largest Cast: Wedding Crashers, Starsky And Hutch, Valentine's Day, Forgetting Sarah Marshall [5]
+Smallest Cast: Black Swan [0]
+Enter option (cdprswx): s Owen Wilson,Ben Stiller
+Meet The Fockers, Starsky And Hutch, Zoolander
+Enter option (cdprswx): c the little mermaid
+movie not found
+Enter option (cdprswx): p jonah hill
+Moneyball, Forgetting Sarah Marshall
+Enter option (cdprswx): p ryan gosling
+The Notebook, Crazy Stupid Love
+Enter option (cdprswx): r forgetting sarah marshall
+movie removed
+Enter option (cdprswx): d
+Movies: 58, Actors: 45
+# of actors/movie: most 5, least 0, average 2
+# of movies/actor: most 6, least 1, average 3
+Largest Cast: Wedding Crashers, Starsky And Hutch, Valentine's Day [5]
+Smallest Cast: Black Swan [0]
+Enter option (cdprswx): p lebron james
+actor not found
+Enter option (cdprswx): x
+exit

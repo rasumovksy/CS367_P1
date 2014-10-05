@@ -1,0 +1,46 @@
+Cate Blanchett,Benjamin Button,The Lord of the Rings,Robin Hood,The Life Aquatic
+Orlando Bloom,Pirates of the Caribbean,The Lord of the Rings,Elizabethtown,Troy
+Viggo Mortensen,The Lord of the Rings,Hidalgo
+Owen Wilson,Fantastic Mr. Fox,Wedding Crashers,Meet the Fockers,The Life Aquatic,Starsky and Hutch,Zoolander
+Willem Dafoe,Finding Nemo,The Boondock Saints,The Life Aquatic,Fantastic Mr. Fox
+George Clooney,Fantastic Mr. Fox,The Descendants,Ocean's Eleven,Burn After Reading
+Meryl Streep,Fantastic Mr. Fox,Julie and Julia,The Devil Wears Prada
+Rachel McAdams,Wedding Crashers,The Notebook
+Ben Stiller,Meet the Fockers,Starsky and Hutch,Zoolander,Madagascar
+Dustin Hoffman,Meet the Fockers,The Graduate,Finding Neverland
+Vince Vaughn,Starsky and Hutch,Wedding Crashers
+Ellen DeGeneres,Finding Nemo
+Russell Crowe,Robin Hood,Gladiator,A Beautiful Mind,Cinderella Man
+Brad Pitt,Benjamin Button,Troy,Inglourious Basterds,Moneyball,Ocean's Eleven,Burn After Reading
+Johnny Depp,Pirates of the Caribbean,Alice in Wonderland,Sweeney Todd,Charlie and the Chocolate Factory,Finding Neverland
+Keira Knightley,Pirates of the Caribbean,Love Actually
+Kirsten Dunst,Elizabethtown
+Anne Hathaway,The Devil Wears Prada,Alice in Wonderland,The Dark Knight Rises,The Princess Diaries,Valentine's Day
+Amy Adams,Julie and Julia,Enchanted,The Muppets
+Ryan Gosling,The Notebook,Crazy Stupid Love
+Will Ferrell,Zoolander,Wedding Crashers,Starsky and Hutch,Stranger than Fiction
+Sacha Baron Cohen,Madagascar,Sweeney Todd,Borat,Hugo
+Jonah Hill,Moneyball,Forgetting Sarah Marshall
+Helena Bonham Carter,Alice in Wonderland,Sweeney Todd,Charlie and the Chocolate Factory,Harry Potter
+Alan Rickman,Alice in Wonderland,Sweeney Todd,Harry Potter,Love Actually
+Kate Winslet,Finding Neverland,Titanic
+Gary Oldman,The Dark Knight Rises,Harry Potter
+Julie Andrews,The Princess Diaries,The Sound of Music,Enchanted,Mary Poppins,Despicable Me
+Idina Menzel,Enchanted,Rent
+Patrick Dempsey,Enchanted,Valentine's Day,Sweet Home Alabama
+Steve Carell,Crazy Stupid Love,Despicable Me
+Emma Stone,Crazy Stupid Love,Friends with Benefits,Easy A
+Jason Segel,Forgetting Sarah Marshall,Friends with Benefits,Despicable Me,The Muppets
+Kristen Bell,Forgetting Sarah Marshall,You Again,When in Rome
+Mila Kunis,Forgetting Sarah Marshall,Friends with Benefits,Black Swan
+Leonardo DiCaprio,Titanic,Catch Me if You Can,Inception
+Josh Lucas,Sweet Home Alabama,A Beautiful Mind
+Reese Witherspoon,Sweet Home Alabama,Legally Blonde
+Russell Brand,Despicable Me,Forgetting Sarah Marshall
+Kathy Bates,Valentine's Day,Titanic
+Jessica Biel,Valentine's Day,Elizabethtown
+Jennifer Garner,Valentine's Day,Catch Me if You Can,Juno
+Christopher Walken,Wedding Crashers,Catch Me if You Can
+Ellen Page,Inception,Juno
+Jennifer Coolidge,Legally Blonde,Zoolander
+Jason Bateman,Forgetting Sarah Marshall,Juno,Starsky and Hutch
