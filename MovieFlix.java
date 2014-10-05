@@ -323,10 +323,19 @@ System.out.printf( "%s withdrawn from all movies\n", remainder );
 			// Print display to screen:
 			System.out.printf( "Movies: %d, Actors: %d\n",
 					   movieDb.size(), uniqueActors );
+
+			if( maxActors == -1 ){ maxActors = 0; }
+			if( minActors == -1 ){ minActors = 0; }
+			if( maxMovies == -1 ){ maxMovies = 0; }
+			if( maxMovies == -1 ){ minMovies = 0; }
+
 			double avgActors = ((double)totalActors /
 					    ((double)movieDb.size()));
 			double avgMovies = ((double)totalMovies / 
 					    ((double)currActorList.size()));
+
+
+
 System.out.printf( "# of actors/movie: most %d, least %d, average %d\n",
 		   maxActors, minActors, Math.round(avgActors) );
 System.out.printf( "# of movies/actor: most %d, least %d, average %d\n",
