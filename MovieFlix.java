@@ -212,7 +212,7 @@ public class MovieFlix {
 				    currMovieList.add(currMovie);
 				}
 			    }
-			    if ( currMovieList == null ) {
+			    if ( currMovieList.isEmpty() ) {
 				System.out.println("none");
 			    }
 			    else {
