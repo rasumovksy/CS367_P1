@@ -18,6 +18,9 @@ public class Movie {
      */
     public Movie(String title) {
         this.title = title;
+balbalsklasd
+asdkpasjdfkas
+asjdahsjl
         cast = new ArrayList<String>();
     }
     
